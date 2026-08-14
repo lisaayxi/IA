@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gota Certa - Painel Agro Sustentável</title>
+    <style>
+        /* Configurações Gerais e Cores */
+        :root {
+            --cor-fundo: #f0f4f1;
+            --cor-primaria: #2e7d32; /* Verde Agro */
+            --cor-secundaria: #1565c0; /* Azul Água */
+            --cor-alerta: #e65100; /* Laranja Alerta */
+            --cor-card: #ffffff;
+            --cor-texto: #2c3e50;
+            --fonte: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            font-family: var(--fonte);
+            color: var(--cor-texto);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, var(--cor-primaria), #1b5e20);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        /* Seção de Status (Cards) */
+        .painel-status {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: var(--cor-card);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba= rgba(0, 0, 0, 0.05);
+            border-top: 5px solid var(--cor-primaria);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Customização de cores específicas para cada tipo de card */
+        .card.agua { border-top-color: var(--cor-secundaria); }
+        .card.alerta { border-top-color: var(--cor-alerta); }
+
+        .card h3 {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card .valor {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--cor-texto);
+            margin-bottom: 5px;
+        }
+
+        .card .status-texto {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* Cores de texto dinâmicas para o status */
+        .txt-alerta { color: var(--cor-alerta); }
+        .txt-seguro { color: var(--cor-primaria); }
+        .txt-destaque { color: var(--cor-secundaria); }
+
+        /* Seção de Impacto Ambiental */
+        .eco-info {
+            background-color: #e8f5e9;
+            border-left: 6px solid var(--cor-primaria);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .eco-info h4 {
+            color: var(--cor-primaria);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            border-top: 1px solid #dcdde1;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Gota Certa 🌾</h1>
+            <p>Concurso de Programação: Agro forte, futuro sustentável</p>
+        </header>
+
+        <main class="painel-status">
+            
+            <div class="card alerta">
+                <h3>Umidade do Solo</h3>
+                <div class="valor">24%</div>
+                <p class="status-texto txt-alerta">⚠️ Solo Seco (Abaixo do ideal)</p>
+            </div>
+
+            <div class="card agua">
+                <h3>Previsão de Chuva</h3>
+                <div class="valor">85%</div>
+                <p class="status-texto txt-destaque">🌧️ Chuva iminente nas próximas horas</p>
+            </div>
+
+            <div class="card">
+                <h3>Status da Irrigação</h3>
+                <div class="valor">Desligada</div>
+                <p class="status-texto txt-seguro">✅ Economizando água (Solo receberá chuva)</p>
+            </div>
+
+        </main>
+
+        <section class="eco-info">
+            <h4>🌱 Equilíbrio em Ação (Algoritmo Sustentável)</h4>
+            <p>
+                Apesar de a umidade do solo estar baixa (24%), o sistema cruzou os dados com a previsão do tempo e identificou 85% de chance de chuva. 
+                <strong>Resultado:</strong> A irrigação foi suspensa automaticamente, economizando recursos hídricos e evitando o encharcamento desnecessário da lavoura.
+            </p>
+        </section>
+
+        <footer>
+            <p>Desenvolvido para o Concurso de Programação — SEED-PR & SENAR-PR</p>
+        </footer>
+    </div>
+
+</body>
+</html>
